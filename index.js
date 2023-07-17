@@ -1,7 +1,9 @@
-import { mergeSort } from "./algorithms/mergeSort";
-import { quickSort } from "./algorithms/quickSort";
-import { radixSort } from "./algorithms/radixSort";
+import { SinglyLinkedList } from "./data structures/SinglyLinkedList";
 
-const sortedArray = radixSort([1, 5, 22, 32, 36, 28, 3025, 596, 8, 6], 0);
+const list = new SinglyLinkedList();
 
-console.log(sortedArray);
+list.push(2);
+list.push(1);
+list.pop();
+
+console.log(list);
