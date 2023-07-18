@@ -2,8 +2,11 @@ import { SinglyLinkedList } from "./data structures/SinglyLinkedList";
 
 const list = new SinglyLinkedList();
 
-list.push(2);
 list.push(1);
-list.pop();
+list.push(2);
+list.push(3);
+list.push(3);
+list.push(3);
 
-console.log(list);
+console.log(list.get(7));
+console.log(list.length);

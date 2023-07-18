@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "bubbleSort.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "bash-hello": "bash ./hello.sh"
   },
   "author": "",
   "license": "ISC",
