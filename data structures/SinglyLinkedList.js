@@ -82,12 +82,13 @@ export class SinglyLinkedList {
     return element;
   }
 
-  set(i) {
-    if (i < 0 || i >= this.length) {
-      return null;
+  set(i, value) {
+    let element = this.get(i);
+    if (element) {
+      element.val = value;
+      return true;
     }
-    let counter = 0;
-    let element = this.head;
-    
+
+    return false;
   }
 }

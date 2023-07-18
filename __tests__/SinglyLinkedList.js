@@ -18,4 +18,9 @@ describe("linked list", () => {
   it("should return the correct length of the list", () => {
     expect(list.length).toEqual(5);
   });
+
+  it("should set a the value of the node at the given index", () => {
+    expect(list.set(2, 2).val).toBeTruthy;
+    expect(list.set(4, 100).val).toBeFalsy;
+  });
 });
