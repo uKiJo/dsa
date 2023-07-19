@@ -7,6 +7,8 @@ list.push(2);
 list.push(3);
 list.push(3);
 list.push(3);
+list.insertAt(2, 5);
 
-console.log(list.get(7));
-console.log(list.length);
+console.log(list);
+list.reverse();
+console.log(list.print());

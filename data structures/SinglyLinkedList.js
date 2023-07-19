@@ -91,4 +91,60 @@ export class SinglyLinkedList {
 
     return false;
   }
+
+  insertAt(i, val) {
+    if (i < 0 || i > this.length) {
+      return null;
+    }
+
+    if (i === this.length) return this.push(val);
+    if (i === 0) return this.unshift(val);
+
+    let newNode = new Node(val);
+    let previousElement = this.get(i - 1);
+    newNode.next = previousElement.next;
+    previousElement.next = newNode;
+    //OR ===>
+    // let currentElement = this.get(i);
+    // previousElement.next = newNode;
+    // newNode.next = currentElement;
+    this.length++;
+  }
+
+  removeAt(i) {
+    if (i < 0 || i >= this.length) {
+      return null;
+    }
+    if (i === 0) return this.shift();
+    if (i === this.length - 1) return this.pop();
+
+    // let element = this.get(i);
+    let previousElement = this.get(i - 1);
+    let removed = previousElement.next;
+    previousElement.next = removed.next;
+    this.length--;
+  }
+
+  reverse() {
+    let prevNode = null;
+    let currentNode = this.head;
+    this.head = this.tail;
+    this.tail = currentNode;
+    for (let index = 0; index < this.length; index++) {
+      let nextNode = currentNode.next;
+      currentNode.next = prevNode;
+      prevNode = currentNode;
+      currentNode = nextNode;
+    }
+  }
+
+  print() {
+    let arr = [];
+    let current = this.head;
+    for (let index = 0; index < this.length; index++) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    return arr;
+  }
 }
