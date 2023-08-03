@@ -69,5 +69,40 @@ export class DoublyLinkedList {
       this.head.next = oldHead;
       oldHead.prev = this.head;
     }
+    return this;
+  }
+
+  get(i) {
+    if (i < 0 || i >= this.length) {
+      return null;
+    }
+    let middle = Math.floor(this.length / 2);
+    let element;
+
+    if (i > middle) {
+      let counter = this.length - 1;
+      element = this.tail;
+      while (counter !== i) {
+        element = element.prev;
+        counter--;
+      }
+    } else {
+      let counter = 0;
+      element = this.head;
+      while (counter !== i) {
+        element = element.next;
+        counter++;
+      }
+    }
+    return element;
+  }
+
+  set(i, value) {
+    let element = this.get(i);
+    if (element) {
+      element.val = value;
+      return true;
+    }
+    return false;
   }
 }

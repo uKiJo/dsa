@@ -33,4 +33,8 @@ describe("linked list", () => {
     expect(list.head.val).toEqual(0);
     expect(list.length).toEqual(2);
   });
+
+  it("gets a specific element at a specific index", () => {
+    expect(list.get(1).val).toEqual(2);
+  });
 });
