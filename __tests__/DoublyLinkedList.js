@@ -27,4 +27,10 @@ describe("linked list", () => {
     expect(list.tail).toEqual(null);
     expect(list.length).toEqual(0);
   });
+
+  it("adds an element at the beginning of the list", () => {
+    list.unshift(0);
+    expect(list.head.val).toEqual(0);
+    expect(list.length).toEqual(2);
+  });
 });
