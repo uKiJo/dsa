@@ -37,4 +37,13 @@ describe("linked list", () => {
   it("gets a specific element at a specific index", () => {
     expect(list.get(1).val).toEqual(2);
   });
+
+  it("insert an element at specific index", () => {
+    list.insertAt(1, 0);
+    expect(list.length).toEqual(3);
+    expect(list.get(1).val).toEqual(0);
+    expect(list.get(1).next.val).toEqual(2);
+    expect(list.get(1).prev.val).toEqual(1);
+    expect(list.get(2).prev.val).toEqual(0);
+  });
 });
